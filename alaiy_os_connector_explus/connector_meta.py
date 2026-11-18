@@ -18,4 +18,21 @@ connector_meta = {
     "sync_status_method": "alaiy_os_connector_explus.api.sync.get_sync_status",
     "is_enabled": 0,
     "connection_status": "untested",
+    "health": [
+        {
+            "key": "tracking",
+            "label": "Tracking pull",
+            "direction": "pull",
+            "log_doctype": "Explus Sync Log",
+            "log_filter": {"sync_type": "pull"},
+            "fields": {
+                "processed": "items_processed",
+                "changed": "items_updated",
+                "failed": "items_failed",
+                "error": "error_message",
+            },
+            "scheduled": False,
+            "expects_rows": False,
+        },
+    ],
 }
